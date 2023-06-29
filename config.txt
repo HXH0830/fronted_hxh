@@ -1,0 +1,30 @@
+frontend_config  {
+  type: FAST_OPTICAL_FLOW
+  target_num_of_features: 150
+  detect_ratio_threshold: 1.0
+  fast_threshold: 15
+  minimum_distance: 30
+  window_size: 21
+  pyramid_levels: 3
+  do_equalization: true
+  do_reverse_check: true
+  max_reverse_check_distance: 0.5
+  frame_interval: 1
+  num_cameras: 2
+  id_pairs {
+    first: 0
+    second: 1
+  }
+  max_master_slave_tracking_distance: 1.0
+  use_klt_for_slave_tracking: true  # Use descriptor matching if false
+  epipolar_threshold: 0.1
+  orb_extractor_config {
+    features_num: 1200
+    pyramid_scale_factor: 1.2
+    pyramid_levels: 2
+    init_th_fast: 20
+    min_th_fast: 7
+  }
+  slave_tracking_interval_from_last: 1
+  slave_tracking_interval_from_master: 1
+}
